@@ -23,6 +23,6 @@ final class AppPageHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
-        return new HtmlResponse($this->template->render('app::app-page', []));
+        return new HtmlResponse($this->template->render('app::signup-page', []));
     }
 }
