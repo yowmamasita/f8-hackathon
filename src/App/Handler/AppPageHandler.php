@@ -6,7 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Expressive\Template;
+use Zend\Expressive\Template\TemplateRendererInterface;
 
 /**
  * @author Ben Sarmiento <me@bensarmiento.com>
@@ -15,10 +15,8 @@ final class AppPageHandler implements RequestHandlerInterface
 {
     private $template;
 
-    public function __construct(
-        Template\TemplateRendererInterface $template
-    ) {
-        $this->template      = $template;
+    public function __construct(TemplateRendererInterface $template) {
+        $this->template = $template;
     }
 
     public function handle(ServerRequestInterface $request) : ResponseInterface
