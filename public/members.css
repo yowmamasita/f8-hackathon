@@ -1,0 +1,41 @@
+.members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.member {
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.member:hover {
+    background: #00A5E3;
+    color: #ffffff;
+}
+
+.event-title {
+    font-size: large;
+    /*font-weight: bold;*/
+}
+
+.guest-list {
+    color: #2e3436;
+    font-style: italic;
+    padding-bottom: 8px;
+}
+
+.guest-pic {
+    width: 20px;
+}
+
+.badges img {
+    width: 30px;
+}
+
+.fb-link {
+    color: #ffffff;
+}

@@ -1,0 +1,47 @@
+<?php
+$this->headTitle('Home');
+$past = isset($_GET['when']) && $_GET['when'] === 'past';
+$verb = $past ? 'attended' : 'attending';
+?>
+
+<?php if (!$past) { ?>
+<h1 class="display-4 mb-4">Upcoming Events</h1>
+<?php } else { ?>
+<h1 class="display-4 mb-4">Past Events</h1>
+<?php } ?>
+
+<div>
+    <?php foreach ($this->events as $event) { ?>
+
+      <div class="event-title"><a href="https://www.facebook.com/events/196956767774909/" target="_blank"><?php echo $event['name']; ?></a></div>
+      <div class="event-description"><?php echo $event['description']; ?></div>
+      <?php if (!$past) { ?>
+      <div class="event-time"><?php echo $event['date']; ?>, starts at <?php echo $event['start_time']; ?>, ends at <?php echo $event['end_time']; ?></div>
+      <?php } ?>
+      <div class="attending"><?php $guestCount = rand(10, 30); echo $guestCount . ' ' . $verb; ?></div>
+      <div class="guest-list">
+          <?php
+          if ($event['guest_list_enabled']) {
+              $guests = json_decode(file_get_contents('https://randomuser.me/api/?results='.$guestCount.'&nat=us'), true);
+              echo implode(' ', array_map(function($guest) {
+                  return sprintf('<img class="guest-pic" src="%s">', $guest['picture']['thumbnail']);
+              }, $guests['results']));
+          } else {
+              echo "Guest list not available";
+          }
+          ?>
+      </div>
+      <?php if ($past) { ?>
+      <div class="event-submit">
+        <a class="btn btn-light btn-sm" href="https://www.facebook.com/events/196956767774909/" target="_blank">&#128247; Submit photos</a>
+      </div>
+      <?php } ?>
+
+    <?php } ?>
+
+    <?php if (!$past) { ?>
+      <div class="pt-4"><a href="/events?when=past">See past events</a></div>
+    <?php } else { ?>
+      <div class="pt-4"><a href="/events">See upcoming events</a></div>
+    <?php } ?>
+</div>

@@ -1,7 +1,8 @@
 <?php
 $this->headLink()
     ->prependStylesheet('https://use.fontawesome.com/releases/v5.0.6/css/all.css')
-    ->prependStylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+    ->prependStylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+    ->prependStylesheet('/members.css');
 $this->inlineScript()
     ->prependFile('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
     ->prependFile('https://code.jquery.com/jquery-3.3.1.min.js');
@@ -33,8 +34,9 @@ $this->inlineScript()
                     </button>
                     <!-- Brand -->
                     <a class="navbar-brand" href="<?=$this->url('home')?>">
-                        F8 Hackathon
+                        Facebook for Communities
                     </a>
+                    <div class="fb-link"><a>View on Facebook <img src="/facebooklogo.png"></a></div>
                 </div>
             </div>
         </nav>
@@ -50,7 +52,7 @@ $this->inlineScript()
         <div class="container">
             <hr />
             <p>
-                &copy; 2018 - <?=date('Y')?> by Zend Technologies Ltd. All rights reserved.
+                &copy; 2018 - <?=date('Y')?> by Facebook. All rights reserved.
             </p>
         </div>
     </footer>

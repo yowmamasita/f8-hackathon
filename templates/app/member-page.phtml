@@ -1,0 +1,31 @@
+<?php $this->headTitle('Home'); ?>
+
+<img src="<?php echo ucwords($this->member['picture']['large']); ?>">
+
+<h1 class="display-4 mb-4"><?php echo ucwords($this->member['name']['first']); ?></h1>
+
+<div>
+    <div>Attended 20 events</div>
+    <?php if (rand(0, 1)) { ?>
+        <div>Streak: Missed last event</div>
+    <?php } else { ?>
+        <div>Streak: Attended last 5 events</div>
+    <?php } ?>
+    <div class="badges">Badges:
+        <span title="Presented at an event - 9/12/17">&#129351;</span>
+        <span title="Volunteered at an event - 8/24/17">&#129352;</span>
+        <span title="Suggested a venue at an event - 5/1/16">&#129353;</span>
+    </div>
+    <div>
+        <?php foreach ($this->testimonials as $testimonial) { ?>
+         <hr>
+        <div>
+            <div>
+                <?php echo preg_replace('/\#([a-zA-Z]+)/', '<a href="#">#${1}</a>', $testimonial['body']); ?>
+            </div>
+            <div>Posted at <?php echo date('F j, Y, g:i a', $testimonial['posted_at']); ?></div>
+            <div><a href="#">Event name</a></div>
+        </div>
+        <?php } ?>
+    </div>
+</div>

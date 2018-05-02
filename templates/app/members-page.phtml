@@ -1,0 +1,20 @@
+<?php $this->headTitle('Home'); ?>
+
+<h1 class="display-4 mb-4">Members</h1>
+
+<div class="members">
+<?php foreach ($this->members['results'] as $member) { ?>
+
+<div class="m-1 member" onclick="redirectToProfile();">
+  <img src="<?php echo $member['picture']['large']; ?>">
+  <div class="text-center"><?php echo ucwords($member['name']['first']); ?></div>
+</div>
+
+<?php } ?>
+</div>
+
+<script>
+  window.redirectToProfile = function () {
+    window.location = '/members/' + Math.floor(Math.random() * Math.floor(100));
+  }
+</script>

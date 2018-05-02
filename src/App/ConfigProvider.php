@@ -38,6 +38,10 @@ class ConfigProvider
             'factories'  => [
                 Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
                 Handler\AppPageHandler::class => Handler\AppPageHandlerFactory::class,
+                Handler\SignupPageHandler::class => Handler\SignupPageHandlerFactory::class,
+                Handler\MembersPageHandler::class => Handler\MembersPageHandlerFactory::class,
+                Handler\MemberPageHandler::class => Handler\MemberPageHandlerFactory::class,
+                Handler\EventsPageHandler::class => Handler\EventsPageHandlerFactory::class,
             ],
         ];
     }

@@ -13,7 +13,7 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 /**
  * @author Ben Sarmiento <me@bensarmiento.com>
  */
-final class AppPageHandler implements RequestHandlerInterface
+final class EventsPageHandler implements RequestHandlerInterface
 {
     private $facebook;
 
@@ -43,14 +43,6 @@ final class AppPageHandler implements RequestHandlerInterface
             exit;
         }
 
-        $database = $this->firebase->getDatabase();
-        $newUser = $database->getReference($communityId . '/members/' . $userId);
-        $snapshot = $newUser->getSnapshot();
-        if ($snapshot->exists()) {
-            header('Location: /events');
-            exit;
-        }
-
         try {
             $accessToken = $_COOKIE['fb_access_token'];
 
@@ -61,11 +53,40 @@ final class AppPageHandler implements RequestHandlerInterface
 
             // Get the \Facebook\GraphNodes\GraphUser object for the current user.
             // If you provided a 'default_access_token', the '{access-token}' is optional.
-            $response = $this->facebook->get('/me', $accessToken);
-            $me = $response->getGraphUser();
+            //$response = $this->facebook->get('/' . $communityId . '/events', $accessToken);
+            //$events = $response->getGraphEdge()->all();
+            $events = [
+                [
+                    'name' => 'Meetup#6 - ReactJS Study Group',
+                    'description' => 'Facebook HQ, 1 Hacker Way, Menlo Park, California 94025',
+                    'attending_count' => 0,
+                    'date' => 'Next week',
+                    'end_time' => '5pm',
+                    'start_time' => '9am',
+                    'guest_list_enabled' => true,
+                ],
+                [
+                    'name' => 'Meetup#7 - ReactJS Study Group',
+                    'description' => 'Facebook HQ, 1 Hacker Way, Menlo Park, California 94025',
+                    'attending_count' => 0,
+                    'date' => 'June 6',
+                    'end_time' => '5pm',
+                    'start_time' => '9am',
+                    'guest_list_enabled' => true,
+                ],
+                [
+                    'name' => 'Meetup#8 - ReactJS Study Group',
+                    'description' => 'Facebook HQ, 1 Hacker Way, Menlo Park, California 94025',
+                    'attending_count' => 0,
+                    'date' => 'June 24',
+                    'end_time' => '5pm',
+                    'start_time' => '9am',
+                    'guest_list_enabled' => false,
+                ],
+            ];
 
-            return new HtmlResponse($this->template->render('app::signup-page',
-                ['name' => $me->getName(), 'email' => $me->getEmail()]
+            return new HtmlResponse($this->template->render('app::events-page',
+                ['events' => $events]
             ));
         } catch(\Facebook\Exceptions\FacebookResponseException $e) {
             // When Graph returns an error
