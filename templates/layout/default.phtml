@@ -36,8 +36,9 @@ $this->inlineScript()
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <?php if (!in_array($this->url(), $public)) { ?><a class="nav-item nav-link" href="/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=">Profile</a><?php } ?>
-            <?php if (!in_array($this->url(), $public)) { ?><a class="nav-item nav-link" href="/members">Members</a><?php } ?>
+            <?php if (!in_array($this->url(), $public)) { ?><a class="nav-item nav-link <?php if ($this->url() == '/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=') { echo 'active'; } ?>" href="/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=">Profile<?php if ($this->url() == '/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=') { echo ' <span class="sr-only">(current)</span>'; } ?></a><?php } ?>
+            <?php if (!in_array($this->url(), $public)) { ?><a class="nav-item nav-link <?php if ($this->url() == '/events') { echo 'active'; } ?>" href="/events">Events<?php if ($this->url() == '/events') { echo ' <span class="sr-only">(current)</span>'; } ?></a><?php } ?>
+            <?php if (!in_array($this->url(), $public)) { ?><a class="nav-item nav-link <?php if ($this->url() == '/members') { echo 'active'; } ?>" href="/members">Members<?php if ($this->url() == '/members') { echo ' <span class="sr-only">(current)</span>'; } ?></a><?php } ?>
             <a class="nav-item nav-link" href="https://www.facebook.com/groups/wwcodemanila/" target="_blank">FB Group</a>
             <a class="nav-item nav-link" href="https://www.facebook.com/wwcodemanila/" target="_blank">FB Page</a>
           </div>
