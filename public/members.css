@@ -78,6 +78,9 @@ h1, h2, h3, h4, h5, h6, p, a {
     border-radius: 25px;
     margin-top: 40px;
     margin-left: 80px;
+}
+
+.member-pic-small {
     width: 128px;
     height: 128px;
 }
