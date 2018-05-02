@@ -1,32 +1,56 @@
 <?php $this->headTitle('Home'); ?>
 
-<img src="<?php echo ucwords($this->member['pic']); ?>">
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <img class="member-pic" src="<?php echo ucwords($this->member['pic']); ?>">
+    </div>
 
-<h1 class="display-4 mb-4"><?php echo ucwords($this->member['name']); ?></h1>
-
-<div>
-    <div>Joined the community because ...</div>
-    <div>Attended 20 events</div>
-    <?php if (rand(0, 1)) { ?>
-        <div>Streak: Missed last event</div>
-    <?php } else { ?>
-        <div>Streak: Attended last 5 events</div>
-    <?php } ?>
-    <div class="badges">Badges:
+    
+    <div class="col">
+      <h1 class="name"><?php echo ucwords($this->member['name']); ?></h1>
+      
+      <div class="reason">I want to meet other women in the tech industry and learn more about programming.</div>
+      <div class="badges">Badges:
         <span title="Presented at an event - 9/12/17">&#129351;</span>
         <span title="Volunteered at an event - 8/24/17">&#129352;</span>
         <span title="Suggested a venue at an event - 5/1/16">&#129353;</span>
-    </div>
-    <div>
-        <?php foreach ($this->testimonials as $testimonial) { ?>
-         <hr>
-        <div>
-            <div>
-                <?php echo preg_replace('/\#([a-zA-Z]+)/', '<a href="#">#${1}</a>', $testimonial['body']); ?>
-            </div>
-            <div>Posted at <?php echo $testimonial['posted_at']; ?></div>
-            <div><a href="#"><?php echo $testimonial['event_name']; ?></a></div>
-        </div>
+      </div>
+      
+      
+      <p class="member-date">Member as of January 25, 2018</p>
+      <div class="attended">Attended 5 events</div>
+        <?php if (rand(0, 1)) { ?>
+          <div class="attended">Streak: Missed last event</div>
+        <?php } else { ?>
+          <div class="attended">Streak: Attended last 5 events</div>
         <?php } ?>
+      
+    </div>
+</div>
+
+      <div class="container">
+      <h1 class="til">Today I learned</h1>
+      </div>
+      <div class="box">
+        <?php foreach ($this->testimonials as $testimonial) { ?>
+        
+            <ul id="first-list">
+              <li>
+                <div class="title">#TIL</div>
+                <div class="info">
+                   <?php echo preg_replace('/\#([a-zA-Z]+)/', '<a href="#">#${1}</a>', $testimonial['body']); ?>
+                </div>
+                <div class="info">
+                   <?php echo "<a href='".$testimonial['url']."'>". $testimonial['url']."</a>"; ?>
+                </div>
+              </li>
+            <div class="time">
+              <span><?php echo "<a href='".$testimonial['event_url']."'>". $testimonial['event_name']."</a>"; ?></span>
+              <span><?php echo date('F j, Y, g:i a', $testimonial['posted_at']); ?></span>
+            </div>
+            </ul>
+        <?php } ?>
+      </div>
     </div>
 </div>
