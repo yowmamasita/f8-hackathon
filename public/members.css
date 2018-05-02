@@ -39,3 +39,11 @@
 .fb-link {
     color: #ffffff;
 }
+
+.grid {
+    text-align: center;
+}
+
+.grid-item {
+    height: 300px;
+}

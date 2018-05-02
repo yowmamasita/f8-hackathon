@@ -22,7 +22,7 @@ $verb = $past ? 'attended' : 'attending';
       <div class="guest-list">
           <?php
           if ($event['guest_list_enabled']) {
-              $guests = json_decode(file_get_contents('https://randomuser.me/api/?results='.$guestCount.'&nat=us'), true);
+              $guests = json_decode(file_get_contents('https://randomuser.me/api/?results='.$guestCount.'&nat=us&gender=female'), true);
               echo implode(' ', array_map(function($guest) {
                   return sprintf('<img class="guest-pic" src="%s">', $guest['picture']['thumbnail']);
               }, $guests['results']));
@@ -34,6 +34,7 @@ $verb = $past ? 'attended' : 'attending';
       <?php if ($past) { ?>
       <div class="event-submit">
         <a class="btn btn-light btn-sm" href="https://www.facebook.com/events/196956767774909/" target="_blank">&#128247; Submit photos</a>
+        <a class="btn btn-dark btn-sm" href="/events/123" target="_blank">&#128444; View all photos</a>
       </div>
       <?php } ?>
 

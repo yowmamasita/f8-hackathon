@@ -46,7 +46,7 @@ final class MembersPageHandler implements RequestHandlerInterface
 //        $database = $this->firebase->getDatabase();
 //        $members = $database->getReference($communityId . '/members');
 
-        $members = json_decode(file_get_contents('https://randomuser.me/api/?results=50&nat=us'), true);
+        $members = json_decode(file_get_contents('https://randomuser.me/api/?results=50&nat=us&gender=female'), true);
 
         return new HtmlResponse($this->template->render('app::members-page',
             ['members' => $members]

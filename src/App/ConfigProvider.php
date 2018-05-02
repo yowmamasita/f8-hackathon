@@ -42,6 +42,7 @@ class ConfigProvider
                 Handler\MembersPageHandler::class => Handler\MembersPageHandlerFactory::class,
                 Handler\MemberPageHandler::class => Handler\MemberPageHandlerFactory::class,
                 Handler\EventsPageHandler::class => Handler\EventsPageHandlerFactory::class,
+                Handler\EventPageHandler::class => Handler\EventPageHandlerFactory::class,
             ],
         ];
     }

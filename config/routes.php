@@ -37,6 +37,7 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->get('/app', App\Handler\AppPageHandler::class, 'app');
     $app->post('/app', App\Handler\SignupPageHandler::class, 'signup');
     $app->get('/members', App\Handler\MembersPageHandler::class, 'members');
-    $app->get('/members/{id:\d+}', App\Handler\MemberPageHandler::class, 'member');
+    $app->get('/members/{hash:.+}', App\Handler\MemberPageHandler::class, 'member');
     $app->get('/events', App\Handler\EventsPageHandler::class, 'events');
+    $app->get('/events/{id:.+}', App\Handler\EventPageHandler::class, 'event');
 };

@@ -5,16 +5,10 @@
 <div class="members">
 <?php foreach ($this->members['results'] as $member) { ?>
 
-<div class="m-1 member" onclick="redirectToProfile();">
+<div class="m-1 member" onclick="window.location = '/members/' + '<?php echo base64_encode($member['picture']['large'] . '~' . ucwords($member['name']['first'])); ?>'">
   <img src="<?php echo $member['picture']['large']; ?>">
   <div class="text-center"><?php echo ucwords($member['name']['first']); ?></div>
 </div>
 
 <?php } ?>
 </div>
-
-<script>
-  window.redirectToProfile = function () {
-    window.location = '/members/' + Math.floor(Math.random() * Math.floor(100));
-  }
-</script>

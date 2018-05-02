@@ -1,0 +1,18 @@
+<?php
+$this->headTitle('Home');
+
+$imageCount = rand(10, 40);
+$dims = [220, 250, 280, 320];
+
+?>
+<div class="grid">
+<?php
+
+while ($imageCount > 0) {
+    $imageCount--;
+?>
+<img class="grid-item" src="https://picsum.photos/<?php echo $dims[array_rand($dims)]; ?>/<?php echo $dims[array_rand($dims)]; ?>/?image=<?php echo $imageCount; ?>">
+<?php
+}
+?>
+</div>

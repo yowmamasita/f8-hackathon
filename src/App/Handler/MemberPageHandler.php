@@ -23,7 +23,10 @@ final class MemberPageHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $member = json_decode(file_get_contents('https://randomuser.me/api/?nat=us'), true);
+        $data = explode('~', base64_decode($request->getAttribute('hash')));
+
+
+//        $member = json_decode(file_get_contents('https://randomuser.me/api/?nat=us'), true);
 
         $latestTime = time() - rand(0, 94608000);
 
@@ -52,7 +55,7 @@ final class MemberPageHandler implements RequestHandlerInterface
 
         return new HtmlResponse($this->template->render('app::member-page',
             [
-                'member' => $member['results'][0],
+                'member' => ['name' => $data[1], 'pic' => $data[0]],
                 'testimonials' => $testimonials,
             ]
         ));

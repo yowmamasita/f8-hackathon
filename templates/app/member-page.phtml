@@ -1,10 +1,11 @@
 <?php $this->headTitle('Home'); ?>
 
-<img src="<?php echo ucwords($this->member['picture']['large']); ?>">
+<img src="<?php echo ucwords($this->member['pic']); ?>">
 
-<h1 class="display-4 mb-4"><?php echo ucwords($this->member['name']['first']); ?></h1>
+<h1 class="display-4 mb-4"><?php echo ucwords($this->member['name']); ?></h1>
 
 <div>
+    <div>Joined the community because ...</div>
     <div>Attended 20 events</div>
     <?php if (rand(0, 1)) { ?>
         <div>Streak: Missed last event</div>
