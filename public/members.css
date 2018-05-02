@@ -46,6 +46,34 @@ h1, h2, h3, h4, h5, h6, p, a {
     padding: 15px;
 }
 
+/* Event */ 
+.event {
+    margin-top: 40px;
+}
+
+.event-title a {
+    color: #024f4f;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.btn.btn-light {
+    background-color: #024f4f;
+    border-color: #024f4f;
+    color: #fff;
+    font-weight: 400;
+}
+
+.btn.btn-light.btn-lg {
+    
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+.btn.btn-light.btn-lg a {
+    color: #fff;
+}
+
 .member-pic {
     border-radius: 25px;
     margin-top: 40px;

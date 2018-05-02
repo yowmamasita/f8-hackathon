@@ -13,6 +13,7 @@ $verb = $past ? 'attended' : 'attending';
 <div>
     <?php foreach ($this->events as $event) { ?>
 
+    <div class="event">
       <div class="event-title"><a href="https://www.facebook.com/events/196956767774909/" target="_blank"><?php echo $event['name']; ?></a></div>
       <div class="event-description"><?php echo $event['description']; ?></div>
       <?php if (!$past) { ?>
@@ -33,16 +34,18 @@ $verb = $past ? 'attended' : 'attending';
       </div>
       <?php if ($past) { ?>
       <div class="event-submit">
-        <a class="btn btn-light btn-sm" href="https://www.facebook.com/events/196956767774909/" target="_blank">&#128247; Submit photos</a>
-        <a class="btn btn-dark btn-sm" href="/events/123" target="_blank">&#128444; View all photos</a>
+        <a class="btn btn-light btn-sm" href="https://www.facebook.com/events/196956767774909/" target="_blank">Submit photos</a>
+        <a class="btn btn-light btn-sm" href="/events/123" target="_blank">View all photos</a>
       </div>
       <?php } ?>
 
+  </div>
     <?php } ?>
 
     <?php if (!$past) { ?>
-      <div class="pt-4"><a href="/events?when=past">See past events</a></div>
+      <div class="btn btn-light btn-lg"><a href="/events?when=past">See past events</a></div>
     <?php } else { ?>
-      <div class="pt-4"><a href="/events">See upcoming events</a></div>
+      <div class="btn btn-light btn-lg"><a href="/events">See upcoming events</a></div>
     <?php } ?>
+
 </div>
