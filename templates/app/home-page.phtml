@@ -26,23 +26,22 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="jumbotron">
-    <h1>Welcome to <span class="zf-green">Women Who Code Manila</span></h1>
-    <p>
-        Congratulations! You have successfully installed the
-        <a href="https://github.com/zendframework/zend-expressive-skeleton" target="_blank">zend-expressive skeleton application</a>.
-        This skeleton can serve as a simple starting point for you to begin building your application.
-    </p>
-    <p>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+    <p class="photo-collage">
         <?php
-        $guestCount = 130;
+        $guestCount = 48;
         $guests = json_decode(file_get_contents('https://randomuser.me/api/?results='.$guestCount.'&nat=us&gender=female'), true);
         echo implode(' ', array_map(function($guest) {
             return sprintf('<img class="welcome-pic" src="%s">', $guest['picture']['medium']);
         }, $guests['results'])); ?>
     </p>
-</div>
-
-<div class="text-center">
-  <a class="btn btn-primary" href="#" onClick="logInWithFacebook()">Join Women Who Code Manila</a>
+    </div>
+    <div class="col">
+      <h3 class="headline">Women Who Code is a global non-profit organization inspiring hundred of thousands of women all over the world to excel in their tech careers.</h3>
+      <h3 class="call-to-action">Be part of our awesome community!</h3>
+      <a class="btn btn-primary" href="#" onClick="logInWithFacebook()">Join Women Who Code Manila</a>
+    </div>
+  </div>
 </div>

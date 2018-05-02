@@ -1,3 +1,51 @@
+body {
+
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+/* Home Page */
+
+.welcome-pic {
+    border-radius: 15px;
+    padding: 4px;
+    opacity: 0.3;
+}
+
+.headline {
+    margin-top: 40px;
+}
+
+.call-to-action{
+    margin-top: 20px;
+}
+
+.btn.btn-primary {
+    margin-top: 15px;
+    color: #fff;
+    background-color: #007a7c;
+    border-color: #007a7c;
+    padding: 15px;
+}
+
+.btn.btn-primary:hover {
+    margin-top: 15px;
+    color: #fff;
+    background-color: #024f4f;
+    border-color: #024f4f;
+    padding: 15px;
+}
+
+.btn.btn-primary:active {
+    margin-top: 15px;
+    color: #fff;
+    background-color: #024f4f;
+    border-color: #024f4f;
+    padding: 15px;
+}
+
 .member-pic {
     border-radius: 25px;
     margin-top: 40px;
