@@ -34,6 +34,7 @@ final class AppPageHandler implements RequestHandlerInterface
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
         $communityId = '1622481671181314';
+        $profile = '/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=';
 
         $helper = $this->facebook->getJavaScriptHelper();
         $userId = $helper->getUserId();
@@ -47,7 +48,7 @@ final class AppPageHandler implements RequestHandlerInterface
         $newUser = $database->getReference($communityId . '/members/' . $userId);
         $snapshot = $newUser->getSnapshot();
         if ($snapshot->exists()) {
-            header('Location: /events');
+            header('Location: ' . $profile);
             exit;
         }
 

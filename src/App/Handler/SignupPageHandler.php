@@ -34,6 +34,7 @@ final class SignupPageHandler implements RequestHandlerInterface
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
         $communityId = '1622481671181314';
+        $profile = '/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=';
 
         $helper = $this->facebook->getJavaScriptHelper();
         $userId = $helper->getUserId();
@@ -54,7 +55,7 @@ final class SignupPageHandler implements RequestHandlerInterface
             ]);
         }
 
-        header('Location: /events');
+        header('Location: ' . $profile);
         exit;
     }
 }
