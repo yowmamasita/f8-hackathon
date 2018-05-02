@@ -52,6 +52,7 @@ final class AppPageHandler implements RequestHandlerInterface
         }
 
         try {
+            if (!isset($_COOKIE['fb_access_token'])) $_COOKIE['fb_access_token'] = null;
             $accessToken = $_COOKIE['fb_access_token'];
 
             if (!$accessToken) {
