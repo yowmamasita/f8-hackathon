@@ -74,6 +74,28 @@ h1, h2, h3, h4, h5, h6, p, a {
     color: #fff;
 }
 
+/* Member's sign up */
+.hi {
+    font-weight: 700px;
+    color: #024f4f;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.form-control {
+    border-width:0px;
+    border:none;
+}
+
+.btn.btn-primary.join {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+/* Member's Gallery */
+
 .member-pic {
     border-radius: 25px;
     margin-top: 40px;
