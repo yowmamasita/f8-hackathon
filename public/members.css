@@ -32,6 +32,11 @@
     width: 20px;
 }
 
+.welcome-pic {
+    width: 40px;
+    margin-left: -5px;
+}
+
 .badges img {
     width: 30px;
 }

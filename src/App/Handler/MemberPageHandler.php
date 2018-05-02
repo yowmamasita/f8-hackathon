@@ -34,22 +34,27 @@ final class MemberPageHandler implements RequestHandlerInterface
             [
                 'body' => '#TIL lorem ipsum 123',
                 'posted_at' => $latestTime,
+                'event_name' => '',
             ],
             [
                 'body' => '#TIL lorem ipsum 345',
                 'posted_at' => ceil($latestTime * 0.93),
+                'event_name' => '',
             ],
             [
                 'body' => '#TIL lorem ipsum 456',
                 'posted_at' => ceil($latestTime * 0.88),
+                'event_name' => '',
             ],
             [
                 'body' => '#TIL lorem ipsum 578',
                 'posted_at' => ceil($latestTime * 0.76),
+                'event_name' => '',
             ],
             [
                 'body' => '#TIL lorem ipsum 678',
                 'posted_at' => ceil($latestTime * 0.62),
+                'event_name' => '',
             ],
         ];
 

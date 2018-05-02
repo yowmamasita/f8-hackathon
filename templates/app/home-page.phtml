@@ -34,8 +34,15 @@
         This skeleton can serve as a simple starting point for you to begin building your application.
     </p>
     <p>
-        Expressive builds on zend-stratigility to provide a minimalist PSR-7 middleware framework for PHP.
+        <?php
+        $guestCount = 130;
+        $guests = json_decode(file_get_contents('https://randomuser.me/api/?results='.$guestCount.'&nat=us&gender=female'), true);
+        echo implode(' ', array_map(function($guest) {
+            return sprintf('<img class="welcome-pic" src="%s">', $guest['picture']['medium']);
+        }, $guests['results'])); ?>
     </p>
 </div>
 
-<a href="#" onClick="logInWithFacebook()">Join Women Who Code Manila</a>
+<div class="text-center">
+  <a class="btn btn-primary" href="#" onClick="logInWithFacebook()">Join Women Who Code Manila</a>
+</div>

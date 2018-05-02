@@ -24,8 +24,8 @@
             <div>
                 <?php echo preg_replace('/\#([a-zA-Z]+)/', '<a href="#">#${1}</a>', $testimonial['body']); ?>
             </div>
-            <div>Posted at <?php echo date('F j, Y, g:i a', $testimonial['posted_at']); ?></div>
-            <div><a href="#">Event name</a></div>
+            <div>Posted at <?php echo $testimonial['posted_at']; ?></div>
+            <div><a href="#"><?php echo $testimonial['event_name']; ?></a></div>
         </div>
         <?php } ?>
     </div>
