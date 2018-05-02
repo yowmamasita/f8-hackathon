@@ -1,4 +1,6 @@
 <?php
+$public = ['/', '/app'];
+
 $this->headLink()
     ->prependStylesheet('https://use.fontawesome.com/releases/v5.0.6/css/all.css')
     ->prependStylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
@@ -34,11 +36,10 @@ $this->inlineScript()
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=">Profile</a>
-            <a class="nav-item nav-link" href="/members">Members</a>
-            <a class="nav-item nav-link" href="https://www.facebook.com/groups/wwcodemanila/" target="_blank">Group</a>
-            <a class="nav-item nav-link" href="https://www.facebook.com/wwcodemanila/" target="_blank">Page</a>
+            <?php if (!in_array($this->url(), $public)) { ?><a class="nav-item nav-link" href="/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=">Profile</a><?php } ?>
+            <?php if (!in_array($this->url(), $public)) { ?><a class="nav-item nav-link" href="/members">Members</a><?php } ?>
+            <a class="nav-item nav-link" href="https://www.facebook.com/groups/wwcodemanila/" target="_blank">FB Group</a>
+            <a class="nav-item nav-link" href="https://www.facebook.com/wwcodemanila/" target="_blank">FB Page</a>
           </div>
         </div>
       </nav>
