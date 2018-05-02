@@ -17,7 +17,7 @@ $this->inlineScript()
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="shortcut icon" href="https://framework.zend.com/ico/favicon.ico" />
-    <?=$this->headTitle('zend-expressive')->setSeparator(' - ')->setAutoEscape(false)?>
+    <?=$this->headTitle('Communities by Facebook')->setSeparator(' - ')->setAutoEscape(false)?>
     <?=$this->headMeta()?>
     <?=$this->headLink()?>
     <style>
@@ -25,12 +25,13 @@ $this->inlineScript()
         .app-footer { padding-bottom: 1em; }
         .zf-green, h2 a { color: #68b604; }
       .app-header { padding-bottom: 30px; }
+      .logo { width: 120px; }
     </style>
 </head>
 <body class="app">
     <header class="app-header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Communities by Facebook</a>
+        <a class="navbar-brand" href="#"><img class="logo" src="/logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,8 +40,8 @@ $this->inlineScript()
             <?php if (!in_array($this->url(), $public)) { ?><a class="nav-item nav-link <?php if ($this->url() == '/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=') { echo 'active'; } ?>" href="/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=">Profile<?php if ($this->url() == '/members/aHR0cHM6Ly9pLmltZ3VyLmNvbS8zTGZLS25qLmpwZ35NaWNoaWU=') { echo ' <span class="sr-only">(current)</span>'; } ?></a><?php } ?>
             <?php if (!in_array($this->url(), $public)) { ?><a class="nav-item nav-link <?php if ($this->url() == '/events') { echo 'active'; } ?>" href="/events">Events<?php if ($this->url() == '/events') { echo ' <span class="sr-only">(current)</span>'; } ?></a><?php } ?>
             <?php if (!in_array($this->url(), $public)) { ?><a class="nav-item nav-link <?php if ($this->url() == '/members') { echo 'active'; } ?>" href="/members">Members<?php if ($this->url() == '/members') { echo ' <span class="sr-only">(current)</span>'; } ?></a><?php } ?>
-            <a class="nav-item nav-link" href="https://www.facebook.com/groups/wwcodemanila/" target="_blank">FB Group</a>
-            <a class="nav-item nav-link" href="https://www.facebook.com/wwcodemanila/" target="_blank">FB Page</a>
+            <a class="nav-item nav-link" href="https://www.facebook.com/groups/wwcodemanila/" target="_blank">Group</a>
+            <a class="nav-item nav-link" href="https://www.facebook.com/wwcodemanila/" target="_blank">Page</a>
           </div>
         </div>
       </nav>

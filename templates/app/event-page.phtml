@@ -1,17 +1,63 @@
 <?php
 $this->headTitle('Home');
 
-$imageCount = rand(10, 40);
-$dims = [220, 250, 280, 320];
+$images = [
+    'https://i.imgur.com/vsKke6hr.jpg',
+    'https://i.imgur.com/tK3KN6Jr.jpg',
+    'https://i.imgur.com/sPpt145r.jpg',
+    'https://i.imgur.com/Bc7CALF.jpg',
+    'https://i.imgur.com/nOc2Rohr.jpg',
+    'https://i.imgur.com/zteP4Gir.jpg',
+    'https://i.imgur.com/BnXFG4mr.jpg',
+    'https://i.imgur.com/UfoXG3ar.jpg',
+    'https://i.imgur.com/A0B036yr.jpg',
+    'https://i.imgur.com/WA6l9e1r.jpg',
+    'https://i.imgur.com/pGeaFbBr.jpg',
+    'https://i.imgur.com/dpUT52mr.jpg',
+    'https://i.imgur.com/g7UBOhPr.jpg',
+    'https://i.imgur.com/XvIJVmXr.jpg',
+    'https://i.imgur.com/bAhPEL0r.jpg',
+    'https://i.imgur.com/Ry4LdDVr.jpg',
+    'https://i.imgur.com/HhB0EOpr.jpg',
+    'https://i.imgur.com/threDxKr.jpg',
+    'https://i.imgur.com/1CjE6nOr.jpg',
+    'https://i.imgur.com/QIhzowor.jpg',
+    'https://i.imgur.com/WgQ3f5Sr.jpg',
+    'https://i.imgur.com/GRRKRbpr.jpg',
+    'https://i.imgur.com/cE1sDSLr.jpg',
+    'https://i.imgur.com/hTSvOgzr.jpg',
+    'https://i.imgur.com/RaC9DHer.jpg',
+    'https://i.imgur.com/MdooFHBr.jpg',
+    'https://i.imgur.com/8zq8Mbyr.jpg',
+    'https://i.imgur.com/iaRQhorr.jpg',
+    'https://i.imgur.com/BrBf6uKr.jpg',
+    'https://i.imgur.com/EiznKFZr.jpg',
+    'https://i.imgur.com/2AXneJnr.jpg',
+    'https://i.imgur.com/9uh3Uzsr.jpg',
+    'https://i.imgur.com/c0aTYlnr.jpg',
+    'https://i.imgur.com/ZK7nuHur.jpg',
+    'https://i.imgur.com/FCxqEdzr.jpg',
+    'https://i.imgur.com/UNkP1cBr.jpg',
+    'https://i.imgur.com/eHHgtp6r.jpg',
+    'https://i.imgur.com/JXaT4VTr.jpg',
+    'https://i.imgur.com/Wh0G0qbr.jpg',
+    'https://i.imgur.com/nWguh6cr.jpg',
+    'https://i.imgur.com/xK4nAFTr.jpg'
+];
+shuffle($images);
 
 ?>
 <div class="grid">
+
+  <div class="text-center pb-4">
+    <a href="#" class="btn btn-primary">Share all photos to Page</a>
+    <a href="#" class="btn btn-primary">Share all photos to Group</a>
+  </div>
 <?php
 
-while ($imageCount > 0) {
-    $imageCount--;
+foreach ($images as $image) {
 ?>
-<img class="grid-item" src="https://picsum.photos/<?php echo $dims[array_rand($dims)]; ?>/<?php echo $dims[array_rand($dims)]; ?>/?image=<?php echo $imageCount; ?>">
+<img class="grid-item" src="<?php echo $image; ?>">
 <?php
 }
 ?>
